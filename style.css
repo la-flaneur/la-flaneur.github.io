@@ -13,7 +13,8 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 75px;
+    min-height: 75px;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +25,15 @@ header {
 header h1 {
     margin: 0;
     color: #4B9CD3;
+    font-size: 2.25vw;
 }
+
+@media screen and (min-width: 1200px) {
+    header h1 {
+        font-size: 36px;
+    }
+}
+
 
 header a:hover{
     transform: scale(1.025);
@@ -42,8 +51,15 @@ header a:hover{
 
 .nav li {
     background-color: white;
-    font-size: 25px;
+    font-size: 1.75vw;
 }
+
+@media screen and (min-width: 1200px) {
+     .nav li {
+        font-size: 25px;
+    }
+}
+
 
 .nav li:hover {
     transform: scale(1.05);
@@ -75,15 +91,16 @@ header a:hover{
 #welcome-c {
     background-color: white;
     width: 100%;
-    height: 300px;
+    min-height: 300px;
+    height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 5% 600px;
+    padding: 2%;
     margin: 0;
     box-sizing: border-box;
     color: #4B9CD3;
-    gap: 20px;
+    gap: 10vh;
 }
 
 #aboutme-c {
@@ -92,15 +109,23 @@ header a:hover{
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
             url('images/unc2.jpg') no-repeat center center/cover fixed;
     display: flex;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
 }
 
 #quote {
     color: white;
-    font-size: 50px;
+    font-size: 3vw;
     text-align: center;
     padding-top: 380px;
 }
+
+@media screen and (min-width: 1200px) {
+    quote {
+        font-size: 50px;
+    }
+}
+
 
 #quote h1 {
     margin: 20px;
@@ -117,21 +142,35 @@ header a:hover{
     color:#fd215c;
     margin: 100px ;
     width: 60vh;
-    height: 80vh;
+    height: auto;
     text-align: center;
 }
 
 #aboutme h1 {
-    font-size: 30px;
+    font-size: 2.5vw;
     margin: 40px;
 }
 
+@media screen and (min-width: 1200px) {
+     #aboutme h1 {
+        font-size: 30px;
+    }
+}
+
+
 #aboutme p {
-    font-size: 18px;
+    font-size: 1.75vw;
     margin: 50px;
     text-align: left;
     color: #4B9CD3;
 }
+
+@media screen and (min-width: 1200px) {
+    #aboutme p {
+        font-size: 18px;
+    }
+}
+
 
 #welcome {
     text-align: center;
@@ -153,7 +192,6 @@ header a:hover{
 
 .image-c {
     border-radius: 50%;
-    overflow: hidden;
     margin: 0;
     padding: 0;
 }
@@ -165,7 +203,6 @@ header a:hover{
     border-radius: 50%;
     border-style: solid;
     border-color: rgb(69,116,136,.5);
-    overflow: hidden;
     margin: auto 0 auto 0;
     padding: 0;
 }
@@ -177,3 +214,8 @@ header a:hover{
 }
 
 a {text-decoration: none;}
+
+.non-clickable {
+    pointer-events: none;
+    cursor: default;
+}
