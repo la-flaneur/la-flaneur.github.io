@@ -1,10 +1,11 @@
 body {
     background-color:white;
-    font-family: "Cutive Mono";
+    font-family: "Cutive Mono", sans-serif;
     color: white;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+
 }
 
 header {
@@ -22,7 +23,11 @@ header {
 
 header h1 {
     margin: 0;
-    color: black;
+    color: #4B9CD3;
+}
+
+header a:hover{
+    transform: scale(1.025);
 }
 
 .nav ul {
@@ -40,9 +45,13 @@ header h1 {
     font-size: 25px;
 }
 
+.nav li:hover {
+    transform: scale(1.05);
+}
+
 .nav a {
     background-color: white;
-    color: black;
+    color: #4B9CD3;
 }
 
 .section {
@@ -70,10 +79,10 @@ header h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5% 500px;
+    padding: 5% 600px;
     margin: 0;
     box-sizing: border-box;
-    color: black;
+    color: #4B9CD3;
     gap: 20px;
 }
 
@@ -83,6 +92,7 @@ header h1 {
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
             url('images/unc2.jpg') no-repeat center center/cover fixed;
     display: flex;
+    height: 100vh;
 }
 
 #quote {
@@ -90,7 +100,6 @@ header h1 {
     font-size: 50px;
     text-align: center;
     padding-top: 380px;
-    filter: brightness(100%);
 }
 
 #quote h1 {
@@ -105,10 +114,23 @@ header h1 {
 
 #aboutme {
     background-color: white;
-    color:black;
-    margin: 35px;
+    color:#fd215c;
+    margin: 100px ;
     width: 60vh;
     height: 80vh;
+    text-align: center;
+}
+
+#aboutme h1 {
+    font-size: 30px;
+    margin: 40px;
+}
+
+#aboutme p {
+    font-size: 18px;
+    margin: 50px;
+    text-align: left;
+    color: #4B9CD3;
 }
 
 #welcome {
@@ -116,6 +138,17 @@ header h1 {
     width: 400px;
     font-size: 15px;
 
+}
+
+#welcome h1 {
+    font-size: 24px;
+    color: goldenrod;
+}
+
+#welcome p {
+    letter-spacing: .05rem;
+    color: #4B9CD3;
+    font-family: "Courier New", sans-serif;
 }
 
 .image-c {
@@ -136,6 +169,7 @@ header h1 {
     margin: auto 0 auto 0;
     padding: 0;
 }
+
 .cutive-mono-regular {
     font-family: "Cutive Mono", monospace;
     font-weight: 400;
