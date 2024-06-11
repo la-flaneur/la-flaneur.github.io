@@ -45,19 +45,33 @@ header h1 {
     color: black;
 }
 
-#hero-c {
-    box-sizing: border-box;
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('images/myhero.jpg') no-repeat center center/cover fixed;
-    width: 100%;
-    height: 85vh;
-    margin: 0;
-    padding:0;
-    text-align: center;
+.section {
+        box-sizing: border-box;
+        background:
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('images/myhero.jpg') no-repeat center center/cover fixed;
+        width: 100%;
+        height: 85vh;
+        margin: 0;
+        padding:0;
+        text-align: center;
 }
 
-.section-box {
+#hero-c {
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('images/myhero.jpg') no-repeat center center/cover fixed;
+}
+
+#hello {
+    border-top: solid white 10px;
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('images/unc2.jpg') no-repeat center center/cover fixed;
+    display: flex;
+}
+
+#quote {
     color: white;
     font-size: 50px;
     text-align: center;
@@ -65,16 +79,23 @@ header h1 {
     filter: brightness(100%);
 }
 
-.section-box h1 {
+#quote h1 {
     margin: 20px;
     padding-top: 20px;
     padding-bottom: 0;
 }
 
-.section-box p {
+#quote p {
     margin: 0;
 }
 
+#aboutme {
+    background-color: white;
+    color:black;
+    margin: 20px;
+    width: 50vh;
+    height: 80vh;
+}
 .cutive-mono-regular {
     font-family: "Cutive Mono", monospace;
     font-weight: 400;
