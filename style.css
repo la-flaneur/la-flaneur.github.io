@@ -1,0 +1,82 @@
+body {
+    background-color:white;
+    font-family: "Cutive Mono";
+    color: white;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 0;
+    color: black;
+}
+
+.nav ul {
+    background-color: white;
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-right: 50px;
+    padding: 0;
+    text-align: right;
+}
+
+.nav li {
+    background-color: white;
+    font-size: 25px;
+}
+
+.nav a {
+    background-color: white;
+    color: black;
+}
+
+#hero-c {
+    box-sizing: border-box;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('images/myhero.jpg') no-repeat center center/cover fixed;
+    width: 100%;
+    height: 85vh;
+    margin: 0;
+    padding:0;
+    text-align: center;
+}
+
+.section-box {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 300px;
+    filter: brightness(100%);
+}
+
+.section-box h1 {
+    margin: 20px;
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+.section-box p {
+    margin: 0;
+}
+
+.cutive-mono-regular {
+    font-family: "Cutive Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {text-decoration: none;}
