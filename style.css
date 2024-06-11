@@ -3,6 +3,8 @@ body {
     font-family: "Cutive Mono";
     color: white;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 header {
