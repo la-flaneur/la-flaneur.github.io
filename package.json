@@ -17,12 +17,13 @@
   "bugs": {
     "url": "https://github.com/la-flaneur/la-flaneur.github.io/issues"
   },
-  "homepage": "https://github.com/la-flaneur/la-flaneur.github.io#readme",
+  "homepage": "https://github.com/la-flaneur/la-flaneur.github.io",
   "description": "",
   "dependencies": {
     "firebase": "^11.6.0"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^13.0.0",
     "gh-pages": "^6.3.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
