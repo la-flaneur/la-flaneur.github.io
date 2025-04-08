@@ -10,9 +10,6 @@ module.exports = { // change to 'production' for deploy
     clean: true,
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
     new CopyPlugin({
         patterns: [
           { from: 'src/', to: '' }, // This copies assets from `src/assets/` to `dist/assets/`
