@@ -21,55 +21,45 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-// Set up reCAPTCHA
-const setUpRecaptcha = (containerId) => {
-  const recaptchaVerifier = new RecaptchaVerifier(containerId, {
-    size: "invisible", // Invisible reCAPTCHA, can also use "normal" for visible
-    callback: (response) => {
-      console.log("reCAPTCHA solved:", response);
-    },
-  }, auth);
-  return recaptchaVerifier;
-};
+// Set up reCAPTCHA verifier
+const recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
+  size: 'invisible', // Or 'normal' if you want the reCAPTCHA to show visibly
+  callback: (response) => {
+    // reCAPTCHA verification callback
+    console.log("reCAPTCHA verified:", response);
+  }
+}, auth);
 
-// Send verification code to the phone number
-const sendVerificationCode = (phoneNumber) => {
-  const recaptchaVerifier = setUpRecaptcha("recaptcha-container");
+// This function will handle phone number sign-in
+function signInWithPhone() {
+  const phoneNumber = document.getElementById('phoneNumber').value; // Get phone number from input
+  const appVerifier = recaptchaVerifier;  // Firebase reCAPTCHA verifier
 
-  signInWithPhoneNumber(auth, phoneNumber, recaptchaVerifier)
-    .then((confirmationResult) => {
-      // Save the confirmation result to confirm the code later
-      window.confirmationResult = confirmationResult;
-      console.log("Code sent to:", phoneNumber);
-    })
-    .catch((error) => {
-      console.error("Error during phone number sign-in:", error);
-    });
-};
+  if (phoneNumber) {
+    signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+      .then((confirmationResult) => {
+        // The user will receive a verification code via SMS
+        window.confirmationResult = confirmationResult; // Save the confirmation result for later use
+        console.log("SMS sent to:", phoneNumber);
+        // You can then prompt the user to enter the verification code
+      })
+      .catch((error) => {
+        console.error("Error during sign-in:", error);
+      });
+  } else {
+    console.error("Phone number is empty or invalid");
+  }
+}
 
-// Verify the code entered by the user
-const verifyCode = (code) => {
-  const confirmationResult = window.confirmationResult;
-
-  confirmationResult
-    .confirm(code)
+// After receiving the verification code, handle verification like this
+function verifyCode() {
+  const code = document.getElementById('verificationCode').value; // Get verification code input
+  confirmationResult.confirm(code)  // Use the saved confirmationResult
     .then((result) => {
       const user = result.user;
       console.log("User signed in:", user);
-      // Handle authenticated user (e.g., store user data, navigate, etc.)
     })
     .catch((error) => {
       console.error("Error verifying code:", error);
     });
-};
-
-// Event listeners for phone number and verification code inputs
-document.getElementById("send-code").addEventListener("click", () => {
-  const phoneNumber = document.getElementById("phone-number").value;
-  sendVerificationCode(phoneNumber);
-});
-
-document.getElementById("verify-code").addEventListener("click", () => {
-  const code = document.getElementById("verification-code").value;
-  verifyCode(code);
-});
+}
