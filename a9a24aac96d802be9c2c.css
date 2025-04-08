@@ -1,0 +1,341 @@
+body {
+    background-color:white;
+    font-family: "Cutive Mono", sans-serif !important;
+    color: white;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+  
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20vh;
+}
+header {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 75px;
+    max-height: 15vh;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+
+.navbar-brand {
+    margin: 0 !important;
+    background-color: #ffffff !important;
+  }
+  
+.navbar {
+background-color: #ffffff !important;
+box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+}
+
+.navbar-nav {
+    text-align: right;
+    margin-right: 50px !important;
+    background-color: #ffffff !important;
+}
+
+.nav-link, .navbar-brand, navbar-toggler {
+    color: #1B8EBB !important;
+    background-color: #ffffff !important;
+    font-size: 1.5vw !important;
+}
+
+#nav-placeholder {
+    position: sticky !important;
+}
+
+.custom-toggler.navbar-toggler {
+border: 0;
+}
+
+.navbar-toggler
+{
+&:focus {
+outline: none !important;
+}
+}
+
+.navbar-toggler-icon {
+background-image: none!important;
+background-color: #1B8EBB;
+height: 3px !important;
+width: 10px;
+margin: 10px 0;
+position: relative;
+transition: all 0.35s ease-out;
+transform-origin: center;
+outline: none !important;
+}
+
+.bg-body-tertiary {
+    background-color: #ffffff !important;
+    color:#ffffff !important;
+}
+
+.navbar-toggler-icon::before {
+display: block;
+background-color: #1B8EBB;
+height: 3px;
+content: "";
+position: relative;
+top: -7px;
+transition: all 0.15s ease-out;/*taken down to hide quicker*/
+transform-origin: center;
+}
+
+.navbar-toggler-icon::after {
+display: block;
+background-color: #1B8EBB;
+height: 3px;
+content: "";
+position: relative;
+top: 4px;
+transition: all 0.35s ease-out;
+transform-origin: center;
+
+}
+
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+transform: rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+transform: rotate(-90deg) translateX(7px);
+}
+
+button:focus, button:active {
+box-shadow:none !important;
+outline: none !important;
+}
+
+/* .navbar.fixed-bottom {
+box-shadow: 0 -2px 4px 0 rgba(0,0,0,.3);
+} */
+#quote h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 4.5vw !important;
+}
+
+@media screen and (min-width: 600px) {
+    header h1 {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .nav-link {
+        font-size: 3.5vw !important;
+    }
+} 
+header a:hover{
+    transform: scale(1.025);
+}
+
+/* .nav ul {
+    background-color: white;
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-right: 50px;
+    margin-top: 20px;
+    padding: 0;
+    text-align: right;
+}
+
+.nav li {
+    background-color: white;
+    font-size: 1.75vw;
+} */
+
+@media screen and (min-width: 1200px) {
+     .nav li {
+        font-size: 25px;
+    }
+}
+
+
+.nav li:hover {
+    transform: scale(1.05);
+}
+
+.nav a {
+    background-color: white;
+}
+
+.clickable {
+    color: #4B9CD3;
+}
+
+.section {
+        box-sizing: border-box;
+        background:
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('images/myhero.jpg') no-repeat center center/cover fixed;
+        width: 100%;
+        height: 100vh !important;
+        margin: 0;
+        padding:0;
+        text-align: center;
+}
+
+#hero-c {
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('images/myhero.jpg') no-repeat center center/cover fixed;
+    height: 100vh !important;
+}
+
+#welcome-c {
+    background-color: white;
+    width: 100%;
+    min-height: 300px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    padding: 5%;
+    margin: 0;
+    box-sizing: border-box;
+    color: #4B9CD3;
+    gap: 10vh;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+}
+
+#aboutme-c {
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('images/unc2.jpg') no-repeat center center/cover fixed;
+    display: flex;
+    height: auto;
+    min-height: 100vh;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+}
+
+#quote {
+    color: white;
+    font-size: 3vw;
+    text-align: center;
+    padding-top: 30vh;
+}
+
+@media screen and (min-width: 1200px) {
+    quote {
+        font-size: 50px;
+    }
+}
+
+
+#quote h1 {
+    margin: 20px;
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+#quote p {
+    margin: 0;
+}
+
+#aboutme {
+    background-color: white;
+    color:#fd215c;
+    margin: 100px ;
+    width: 60vh;
+    height: auto;
+    text-align: center;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+}
+
+#aboutme h1 {
+    font-size: 2.5vw;
+    margin: 40px;
+}
+
+@media screen and (min-width: 1200px) {
+     #aboutme h1 {
+        font-size: 30px;
+    }
+}
+
+
+#aboutme p {
+    font-size: 1.75vw;
+    margin: 50px;
+    text-align: left;
+    color: #4B9CD3;
+}
+
+@media screen and (min-width: 1200px) {
+    #aboutme p {
+        font-size: 18px;
+    }
+}
+
+
+#welcome {
+    text-align: center;
+    max-width: 400px;
+    font-size: 20px;
+    
+}
+
+#welcome h1 {
+    font-size: 30px;
+    color: goldenrod;
+}
+
+#welcome p {
+    letter-spacing: .05rem;
+    color: #4B9CD3;
+    font-family: "Courier New", sans-serif;
+}
+
+.image-c {
+    border-radius: 50%;
+    margin: 20px;
+    padding: 0;
+}
+
+#selfie {
+    width: 250px;
+    height:250px;
+    text-align: center;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: rgb(69,116,136,.5);
+    margin: auto 0 auto 0;
+    padding: 0;
+}
+
+.cutive-mono-regular {
+    font-family: "Cutive Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {text-decoration: none;}
+
+.non-clickable {
+    pointer-events: none;
+    cursor: default;
+    color: white;
+}
+
+.nav-link, .navbar-brand {
+    color: #4B9CD3 !important;
+}
