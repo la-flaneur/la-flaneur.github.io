@@ -1,0 +1,27 @@
+{
+  "name": "la-flaneur.github.io",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/la-flaneur/la-flaneur.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/la-flaneur/la-flaneur.github.io/issues"
+  },
+  "homepage": "https://github.com/la-flaneur/la-flaneur.github.io#readme",
+  "description": "",
+  "dependencies": {
+    "firebase": "^11.6.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.99.1",
+    "webpack-cli": "^6.0.1"
+  }
+}

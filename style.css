@@ -46,7 +46,7 @@ box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
 .nav-link, .navbar-brand, navbar-toggler {
     color: #1B8EBB !important;
     background-color: #ffffff !important;
-    font-size: 1.3vw !important;
+    font-size: 1.5vw !important;
 }
 
 #nav-placeholder {
@@ -131,13 +131,17 @@ box-shadow: 0 -2px 4px 0 rgba(0,0,0,.3);
     font-size: 4.5vw !important;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 600px) {
     header h1 {
         font-size: 36px;
     }
 }
 
-
+@media screen and (max-width: 1000px) {
+    .nav-link {
+        font-size: 3.5vw !important;
+    }
+} 
 header a:hover{
     transform: scale(1.025);
 }
@@ -202,23 +206,25 @@ header a:hover{
     min-height: 300px;
     height: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    padding: 2%;
+    align-items: stretch;
+    padding: 5%;
     margin: 0;
     box-sizing: border-box;
     color: #4B9CD3;
     gap: 10vh;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
 }
 
 #aboutme-c {
-    border-top: solid white 10px;
     background:
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
             url('images/unc2.jpg') no-repeat center center/cover fixed;
     display: flex;
     height: auto;
     min-height: 100vh;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
 }
 
 #quote {
@@ -252,6 +258,7 @@ header a:hover{
     width: 60vh;
     height: auto;
     text-align: center;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
 }
 
 #aboutme h1 {
@@ -282,13 +289,13 @@ header a:hover{
 
 #welcome {
     text-align: center;
-    width: 400px;
-    font-size: 15px;
-
+    max-width: 400px;
+    font-size: 20px;
+    
 }
 
 #welcome h1 {
-    font-size: 24px;
+    font-size: 30px;
     color: goldenrod;
 }
 
@@ -300,7 +307,7 @@ header a:hover{
 
 .image-c {
     border-radius: 50%;
-    margin: 0;
+    margin: 20px;
     padding: 0;
 }
 
