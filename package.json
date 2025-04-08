@@ -20,7 +20,8 @@
   "homepage": "https://github.com/la-flaneur/la-flaneur.github.io",
   "description": "",
   "dependencies": {
-    "firebase": "^11.6.0"
+    "firebase": "^11.6.0",
+    "firebase-admin": "^13.2.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^13.0.0",

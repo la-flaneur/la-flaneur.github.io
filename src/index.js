@@ -1,8 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-
+import { getAuth, signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,17 +18,58 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
 const auth = getAuth(app);
-const db = getFirestore(app);
-db.collection('users').getDocs();
-const todosCol = collection(db, 'users');
-const snapshot = await getDocs(todosCol);
-// Initialize Firebase Authentication and get a reference to the service
-onAuthStateChanged (auth, user => {
-    if(user != null) {
-    console.log('logged in!');
-    } else {
-    console.log('No user');
-    }
+
+// Set up reCAPTCHA
+const setUpRecaptcha = (containerId) => {
+  const recaptchaVerifier = new RecaptchaVerifier(containerId, {
+    size: "invisible", // Invisible reCAPTCHA, can also use "normal" for visible
+    callback: (response) => {
+      console.log("reCAPTCHA solved:", response);
+    },
+  }, auth);
+  return recaptchaVerifier;
+};
+
+// Send verification code to the phone number
+const sendVerificationCode = (phoneNumber) => {
+  const recaptchaVerifier = setUpRecaptcha("recaptcha-container");
+
+  signInWithPhoneNumber(auth, phoneNumber, recaptchaVerifier)
+    .then((confirmationResult) => {
+      // Save the confirmation result to confirm the code later
+      window.confirmationResult = confirmationResult;
+      console.log("Code sent to:", phoneNumber);
+    })
+    .catch((error) => {
+      console.error("Error during phone number sign-in:", error);
     });
+};
+
+// Verify the code entered by the user
+const verifyCode = (code) => {
+  const confirmationResult = window.confirmationResult;
+
+  confirmationResult
+    .confirm(code)
+    .then((result) => {
+      const user = result.user;
+      console.log("User signed in:", user);
+      // Handle authenticated user (e.g., store user data, navigate, etc.)
+    })
+    .catch((error) => {
+      console.error("Error verifying code:", error);
+    });
+};
+
+// Event listeners for phone number and verification code inputs
+document.getElementById("send-code").addEventListener("click", () => {
+  const phoneNumber = document.getElementById("phone-number").value;
+  sendVerificationCode(phoneNumber);
+});
+
+document.getElementById("verify-code").addEventListener("click", () => {
+  const code = document.getElementById("verification-code").value;
+  verifyCode(code);
+});
