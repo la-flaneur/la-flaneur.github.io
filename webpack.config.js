@@ -1,8 +1,7 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = {
-  mode: 'development', // change to 'production' for deploy
+module.exports = { // change to 'production' for deploy
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
@@ -22,4 +21,5 @@ module.exports = {
       },
     ],
   },
+  mode: 'development',
 };
