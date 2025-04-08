@@ -1,18 +1,23 @@
 body {
     background-color:white;
-    font-family: "Cutive Mono", sans-serif;
+    font-family: "Cutive Mono", sans-serif !important;
     color: white;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-
+  
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20vh;
+}
 header {
     background-color: white;
     position: fixed;
     top: 0;
     width: 100%;
     min-height: 75px;
+    max-height: 15vh;
     height: auto;
     display: flex;
     justify-content: space-between;
@@ -21,10 +26,109 @@ header {
     box-sizing: border-box;
 }
 
-header h1 {
+
+.navbar-brand {
+    margin: 0 !important;
+    background-color: #ffffff !important;
+  }
+  
+.navbar {
+background-color: #ffffff !important;
+box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+}
+
+.navbar-nav {
+    text-align: right;
+    margin-right: 50px !important;
+    background-color: #ffffff !important;
+}
+
+.nav-link, .navbar-brand, navbar-toggler {
+    color: #1B8EBB !important;
+    background-color: #ffffff !important;
+    font-size: 1.3vw !important;
+}
+
+#nav-placeholder {
+    position: sticky !important;
+}
+
+.custom-toggler.navbar-toggler {
+border: 0;
+}
+
+.navbar-toggler
+{
+&:focus {
+outline: none !important;
+}
+}
+
+.navbar-toggler-icon {
+background-image: none!important;
+background-color: #1B8EBB;
+height: 3px !important;
+width: 10px;
+margin: 10px 0;
+position: relative;
+transition: all 0.35s ease-out;
+transform-origin: center;
+outline: none !important;
+}
+
+.bg-body-tertiary {
+    background-color: #ffffff !important;
+    color:#ffffff !important;
+}
+
+.navbar-toggler-icon::before {
+display: block;
+background-color: #1B8EBB;
+height: 3px;
+content: "";
+position: relative;
+top: -7px;
+transition: all 0.15s ease-out;/*taken down to hide quicker*/
+transform-origin: center;
+}
+
+.navbar-toggler-icon::after {
+display: block;
+background-color: #1B8EBB;
+height: 3px;
+content: "";
+position: relative;
+top: 4px;
+transition: all 0.35s ease-out;
+transform-origin: center;
+
+}
+
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+transform: rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+transform: rotate(-90deg) translateX(7px);
+}
+
+button:focus, button:active {
+box-shadow:none !important;
+outline: none !important;
+}
+
+/* .navbar.fixed-bottom {
+box-shadow: 0 -2px 4px 0 rgba(0,0,0,.3);
+} */
+#quote h1 {
     margin: 0;
-    color: #4B9CD3;
-    font-size: 2.25vw;
+    color: #ffffff;
+    font-size: 4.5vw !important;
 }
 
 @media screen and (min-width: 1200px) {
@@ -38,7 +142,7 @@ header a:hover{
     transform: scale(1.025);
 }
 
-.nav ul {
+/* .nav ul {
     background-color: white;
     list-style: none;
     display: flex;
@@ -52,7 +156,7 @@ header a:hover{
 .nav li {
     background-color: white;
     font-size: 1.75vw;
-}
+} */
 
 @media screen and (min-width: 1200px) {
      .nav li {
@@ -79,7 +183,7 @@ header a:hover{
                 linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
                 url('images/myhero.jpg') no-repeat center center/cover fixed;
         width: 100%;
-        height: 100vh;
+        height: 100vh !important;
         margin: 0;
         padding:0;
         text-align: center;
@@ -89,6 +193,7 @@ header a:hover{
     background:
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
             url('images/myhero.jpg') no-repeat center center/cover fixed;
+    height: 100vh !important;
 }
 
 #welcome-c {
@@ -120,7 +225,7 @@ header a:hover{
     color: white;
     font-size: 3vw;
     text-align: center;
-    padding-top: 380px;
+    padding-top: 30vh;
 }
 
 @media screen and (min-width: 1200px) {
