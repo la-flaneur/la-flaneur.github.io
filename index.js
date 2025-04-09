@@ -20,46 +20,36 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
-
+auth.languageCode = 'it'; // Set the language code for the reCAPTCHA verifier
 // Set up reCAPTCHA verifier
-const recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
-  size: 'invisible', // Or 'normal' if you want the reCAPTCHA to show visibly
-  callback: (response) => {
-    // reCAPTCHA verification callback
-    console.log("reCAPTCHA verified:", response);
+window.recaptchaVerifier = new RecaptchaVerifier(auth, 'sign-in-button', {
+  'size': 'invisible',
+  'callback': (response) => {
+    // reCAPTCHA solved, allow signInWithPhoneNumber.
+    onSignInSubmit();
   }
-}, auth);
+});
 
-// This function will handle phone number sign-in
-function signInWithPhone() {
-  const phoneNumber = document.getElementById('phoneNumber').value; // Get phone number from input
-  const appVerifier = recaptchaVerifier;  // Firebase reCAPTCHA verifier
+const phoneNumber = getPhoneNumberFromUserInput();
+const appVerifier = window.recaptchaVerifier;
 
-  if (phoneNumber) {
-    signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-      .then((confirmationResult) => {
-        // The user will receive a verification code via SMS
-        window.confirmationResult = confirmationResult; // Save the confirmation result for later use
-        console.log("SMS sent to:", phoneNumber);
-        // You can then prompt the user to enter the verification code
-      })
-      .catch((error) => {
-        console.error("Error during sign-in:", error);
+signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+    .then((confirmationResult) => {
+      // SMS sent. Prompt user to type the code from the message, then sign the
+      // user in with confirmationResult.confirm(code).
+      window.confirmationResult = confirmationResult;
+      const code = getCodeFromUserInput();
+confirmationResult.confirm(code).then((result) => {
+  // User signed in successfully.
+  const user = result.user;
+  // ...
+}).catch((error) => {
+  // User couldn't sign in (bad verification code?)
+  console.log("Error signing in: ", error);
+});
+    }).catch((error) => {
+      // Error; SMS not sent
+      window.recaptchaVerifier.render().then(function(widgetId) {
+        grecaptcha.reset(widgetId);
       });
-  } else {
-    console.error("Phone number is empty or invalid");
-  }
-}
-
-// After receiving the verification code, handle verification like this
-function verifyCode() {
-  const code = document.getElementById('verificationCode').value; // Get verification code input
-  confirmationResult.confirm(code)  // Use the saved confirmationResult
-    .then((result) => {
-      const user = result.user;
-      console.log("User signed in:", user);
-    })
-    .catch((error) => {
-      console.error("Error verifying code:", error);
     });
-}
