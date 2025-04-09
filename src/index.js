@@ -33,7 +33,6 @@ window.recaptchaVerifier = new RecaptchaVerifier(auth, 'sign-in-button', {
 const phoneNumber = getPhoneNumberFromUserInput();
 const appVerifier = window.recaptchaVerifier;
 
-const auth = getAuth();
 signInWithPhoneNumber(auth, phoneNumber, appVerifier)
     .then((confirmationResult) => {
       // SMS sent. Prompt user to type the code from the message, then sign the
