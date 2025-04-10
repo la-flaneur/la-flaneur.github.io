@@ -30,3 +30,19 @@ videos.forEach(video => {
     video.currentTime = 0;
   });
 });
+
+import { doc, getDoc, setDoc } from "firebase/firestore"
+import { db } from "./firebase"
+
+// adds a name + data if it doesn’t already exist
+export async function addNameIfNotExists(name, data) {
+  const docRef = doc(db, "names", name)
+  const docSnap = await getDoc(docRef)
+
+  if (docSnap.exists()) {
+    console.log("name already exists")
+  } else {
+    await setDoc(docRef, data)
+    console.log("added new name:", name)
+  }
+}

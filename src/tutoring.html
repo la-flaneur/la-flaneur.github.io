@@ -30,17 +30,24 @@
     </script>
 
     <!-- HTML -->
-<div>
-  <input type="text" id="phone-number" placeholder="Enter your phone number">
-  <button id="send-code">Send Verification Code</button>
-</div>
-
-<div>
-  <input type="text" id="verification-code" placeholder="Enter the code">
-  <button id="verify-code">Verify Code</button>
-</div>
-
-<div id="recaptcha-container"></div>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li class="logged-in">
+      <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+      </li>
+      <li class="logged-in">
+      <a href="#" class="grey-text" id="logout">Logout</a>
+      </li>
+      <li class="logged-in">
+      <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Guide</a>
+      </li>
+      <li class="logged-out">
+      <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+      </li>
+      <li class="logged-out">
+      <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+      </li>
+      </span>
+      </ul>
 
 <script src="bundle.js"></script>
 </body>
