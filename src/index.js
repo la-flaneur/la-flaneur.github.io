@@ -1,5 +1,5 @@
 // src/index.js
-import { addNameIfNotExists } from "script.js"
+import { addNameIfNotExists } from "./script.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("nameForm")
