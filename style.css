@@ -275,8 +275,8 @@ header a:hover{
 
 #aboutme p {
     font-size: 1.75vw;
-    margin: 50px;
-    text-align: left;
+    margin: 30px;
+    text-align: center;
     color: #4B9CD3;
 }
 
@@ -338,4 +338,32 @@ a {text-decoration: none;}
 
 .nav-link, .navbar-brand {
     color: #4B9CD3 !important;
+}
+
+#contact h2,
+#skills h2 {
+  font-family: 'Cutive Mono', monospace;
+  font-weight: bold;
+  color: #333;
+}
+
+#contact .btn:hover,
+#skills a:hover {
+  box-shadow: #f898d7 0px 0px 10px;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.skill-name {
+  font-family: 'Cutive Mono', monospace;
+  font-size: 1.2rem;
+}
+
+#contact .btn {
+    background-color: rgb(219, 78, 174);
+    color: white;
+    border-color: transparent;
+    font-weight: bold
 }
