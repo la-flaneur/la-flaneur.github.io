@@ -1,22 +1,40 @@
-<div class="container-fluid ms-auto">
-      <a class="navbar-brand" style="max-height: 15vh;" href="index.html#">
-            <video class="object-fit-contain card ratio ratio-25x10 logo-c border-0 margin-0 padding-0" style="height: 12vh !important;" src="images/logo.mp4" type="video/mp4" autoplay muted>
-             </video>
-      </a>
-      <button class="navbar-toggler me-3 custom-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon custom-toggler"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav ms-auto fs-4 gap-5">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html#welcome-c">bonjour</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#aboutme">about</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="tutoring.html">tutoring</a>
-          </li>
-        </ul>
-      </div>
+<nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm px-3">
+  <div class="container-fluid align-items-center">
+    <a class="navbar-brand" href="index.html#">
+      <video
+        id="logo-video"
+        class="logo-c"
+        src="/images/logo.mp4"
+        muted
+        playsinline
+      ></video>
+    </a>
+
+    <button
+      class="navbar-toggler custom-toggler collapsed ms-auto"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      style="background-color: transparent; border: none;"
+    >
+      <span class="toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav fs-5 gap-4">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html#welcome-c">bonjour</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#aboutme">about</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="tutoring.html">tutoring</a>
+        </li>
+      </ul>
     </div>
+  </div>
+</nav>

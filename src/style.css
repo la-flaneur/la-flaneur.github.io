@@ -29,93 +29,54 @@ header {
 
 .navbar-brand {
     margin: 0 !important;
+    padding: 0 !important;
     background-color: #ffffff !important;
-  }
+    display: flex;
+    align-items: center;
+}
   
 .navbar {
-background-color: #ffffff !important;
-box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+    width: 100%;
+    padding-left: 0 !important;  /* remove left padding */
+    padding-right: 0 !important; /* remove right padding */
+    margin-left: 0 !important;   /* remove left margin */
+    margin-right: 0 !important;  /* remove right margin */
+    position: sticky !important;   /* make sticky */
+    top: 0 !important;             /* stick to top */
+    z-index: 1050 !important;      /* above content */
 }
 
 .navbar-nav {
-    text-align: right;
-    margin-right: 50px !important;
+    display: flex;
+    align-items: center;
+    margin-left: auto !important; /* push links to the right */
+    margin-right: 0 !important;
+    padding: 0 !important;
     background-color: #ffffff !important;
+    text-align: right;
 }
 
-.nav-link, .navbar-brand, navbar-toggler {
+.nav-link, .navbar-brand {
     color: #1B8EBB !important;
     background-color: #ffffff !important;
     font-size: 1.5vw !important;
 }
 
 #nav-placeholder {
-    position: sticky !important;
+  margin: 0;
+  padding: 0;
 }
 
-.custom-toggler.navbar-toggler {
-border: 0;
-}
-
-.navbar-toggler
-{
-&:focus {
-outline: none !important;
-}
-}
-
-.navbar-toggler-icon {
-background-image: none!important;
-background-color: #1B8EBB;
-height: 3px !important;
-width: 10px;
-margin: 10px 0;
-position: relative;
-transition: all 0.35s ease-out;
-transform-origin: center;
-outline: none !important;
-}
 
 .bg-body-tertiary {
     background-color: #ffffff !important;
     color:#ffffff !important;
 }
 
-.navbar-toggler-icon::before {
-display: block;
-background-color: #1B8EBB;
-height: 3px;
-content: "";
-position: relative;
-top: -7px;
-transition: all 0.15s ease-out;/*taken down to hide quicker*/
-transform-origin: center;
-}
-
-.navbar-toggler-icon::after {
-display: block;
-background-color: #1B8EBB;
-height: 3px;
-content: "";
-position: relative;
-top: 4px;
-transition: all 0.35s ease-out;
-transform-origin: center;
-
-}
-
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
-transform: rotate(45deg);
-}
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
-opacity: 0;
-}
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
-transform: rotate(-90deg) translateX(7px);
-}
 
 button:focus, button:active {
 box-shadow:none !important;
@@ -167,6 +128,11 @@ header a:hover{
         font-size: 25px;
     }
 }
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
 
 
 .nav li:hover {
@@ -185,7 +151,7 @@ header a:hover{
         box-sizing: border-box;
         background:
                 linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url('images/myhero.jpg') no-repeat center center/cover fixed;
+                url('/images/myhero.jpg') no-repeat center center/cover fixed;
         width: 100%;
         height: 100vh !important;
         margin: 0;
@@ -196,7 +162,7 @@ header a:hover{
 #hero-c {
     background:
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('images/myhero.jpg') no-repeat center center/cover fixed;
+            url('/images/myhero.jpg') no-repeat center center/cover fixed;
     height: 100vh !important;
 }
 
@@ -220,7 +186,7 @@ header a:hover{
 #aboutme-c {
     background:
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('images/unc2.jpg') no-repeat center center/cover fixed;
+            url('/images/unc2.jpg') no-repeat center center/cover fixed;
     display: flex;
     height: auto;
     min-height: 100vh;
@@ -339,3 +305,85 @@ a {text-decoration: none;}
 .nav-link, .navbar-brand {
     color: #4B9CD3 !important;
 }
+
+.navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  height: auto;
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* push links to the right */
+  margin-right: 0;
+  padding: 0;
+}
+
+.container-fluid {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+html, body {
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#logo-video {
+  display: block;
+  height: 15vh;
+  max-height: 90px;
+  object-fit: contain;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  appearance: none !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto !important;
+  margin-right: 0!important;
+  padding: 0;
+}
+
+.navbar .nav-link {
+  font-size: 1.25rem;
+  color: #1B8EBB !important;
+  text-decoration: none;
+  padding: 0.25rem 1rem;
+  transition: transform 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+
+    
